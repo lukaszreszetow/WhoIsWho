@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WhoIsWho</string>
+    <string name="button_login">Logowanie</string>
+    <string name="button_register">Rejestracja</string>
+    <string name="editText_nick_hint">Podaj nick</string>
+    <string name="editText_haslo_hint">Wprowadź hasło</string>
 </resources>

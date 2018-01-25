@@ -7,6 +7,10 @@ import com.example.lukas.whoiswho.di.annotation.ActivityContext;
 import com.example.lukas.whoiswho.di.annotation.PerActivity;
 import com.example.lukas.whoiswho.rx.AppSchedulerProvider;
 import com.example.lukas.whoiswho.rx.SchedulerProvider;
+import com.example.lukas.whoiswho.ui.login.LoginContract;
+import com.example.lukas.whoiswho.ui.login.LoginInteractor;
+import com.example.lukas.whoiswho.ui.login.LoginPresenter;
+
 import io.reactivex.disposables.CompositeDisposable;
 
 import dagger.Module;
@@ -40,6 +44,19 @@ public class ActivityModule {
     @Provides
     SchedulerProvider provideSchedulerProvider() {
         return new AppSchedulerProvider();
+    }
+
+    @Provides
+    @PerActivity
+    LoginContract.LoginPresenter<LoginContract.LoginView, LoginContract.LoginInteractor> provideLoginPresenter(
+            LoginPresenter<LoginContract.LoginView, LoginContract.LoginInteractor> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    LoginContract.LoginInteractor provideLoginMvpInteractor(LoginInteractor interactor) {
+        return interactor;
     }
 
 }
