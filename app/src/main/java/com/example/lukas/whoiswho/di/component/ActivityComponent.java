@@ -3,6 +3,7 @@ package com.example.lukas.whoiswho.di.component;
 import com.example.lukas.whoiswho.di.annotation.PerActivity;
 import com.example.lukas.whoiswho.di.module.ActivityModule;
 import com.example.lukas.whoiswho.ui.login.LoginActivity;
+import com.example.lukas.whoiswho.ui.register.RegisterActivity;
 
 import dagger.Component;
 
@@ -11,4 +12,5 @@ import dagger.Component;
 public interface ActivityComponent {
 
    void inject(LoginActivity loginActivity);
+   void inject(RegisterActivity registerActivity);
 }

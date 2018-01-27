@@ -10,6 +10,9 @@ import com.example.lukas.whoiswho.rx.SchedulerProvider;
 import com.example.lukas.whoiswho.ui.login.LoginContract;
 import com.example.lukas.whoiswho.ui.login.LoginInteractor;
 import com.example.lukas.whoiswho.ui.login.LoginPresenter;
+import com.example.lukas.whoiswho.ui.register.RegisterContract;
+import com.example.lukas.whoiswho.ui.register.RegisterInteractor;
+import com.example.lukas.whoiswho.ui.register.RegisterPresenter;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -56,6 +59,19 @@ public class ActivityModule {
     @Provides
     @PerActivity
     LoginContract.LoginInteractor provideLoginMvpInteractor(LoginInteractor interactor) {
+        return interactor;
+    }
+
+    @Provides
+    @PerActivity
+    RegisterContract.RegisterPresenter<RegisterContract.RegisterView, RegisterContract.RegisterInteractor> provideLoginPresenter(
+            RegisterPresenter<RegisterContract.RegisterView, RegisterContract.RegisterInteractor> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    RegisterContract.RegisterInteractor provideLoginMvpInteractor(RegisterInteractor interactor) {
         return interactor;
     }
 

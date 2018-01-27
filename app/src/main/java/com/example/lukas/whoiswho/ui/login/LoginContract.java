@@ -15,7 +15,6 @@ public class LoginContract {
     }
 
     public interface LoginInteractor extends MvpInteractor {
-        void saveFirebaseUserToDatabase(FirebaseUser firebaseUser);
     }
 
     public interface LoginView extends MvpView {
